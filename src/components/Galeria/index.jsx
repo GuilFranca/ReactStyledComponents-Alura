@@ -1,6 +1,29 @@
+import styled from "styled-components";
+import Titulo from "../Titulo";
+import Tags from "./Tags";
+import Populares from "./Populares";
+
+const GaleriaContainer = styled.div`
+    display: flex;
+`;
+
+const SecaoFluida = styled.section`
+    flex-grow: 1;
+    /* width: 100%; */
+`;
+
 const Galeria = () => {
-    return(
-        <h1>Galeria</h1>
+    return (
+        <>
+            <Tags />
+            <GaleriaContainer>
+                <SecaoFluida>
+                    <Titulo>Navegue pela galeria</Titulo>
+
+                </SecaoFluida>
+                <Populares />
+            </GaleriaContainer>
+        </>
     )
 }
 
