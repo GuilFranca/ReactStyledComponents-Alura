@@ -10,25 +10,31 @@ const FundoGradient = styled.div`
   width: 100%;
   min-height: 100vh;
 
-  section {
+  main {
     display: flex;
-    justify-content: space-between;
+    gap: 24px;
   }
+`;
+
+const MainContainer = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 function App() {
   return (
     <FundoGradient>
       <EstilosGlobais />
-      <Cabecalho />
-      <section>
-        <BarraLateral />
-        
-        <Banner 
-          text={"A galeria mais completa de fotos do espaço!"}
-          backgroundBanner={backgroundBanner}
-        />
-      </section>
+      <MainContainer>
+        <Cabecalho />
+        <main>
+          <BarraLateral />
+          <Banner
+            text={"A galeria mais completa de fotos do espaço!"}
+            backgroundBanner={backgroundBanner}
+          />
+        </main>
+      </MainContainer>
     </FundoGradient>
   )
 }

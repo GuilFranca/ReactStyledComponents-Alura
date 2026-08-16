@@ -3,12 +3,12 @@ import styled from "styled-components";
 const BannerEstilizado = styled.figure`
     position: relative;
     border-radius: 20px;
-    width: 1156px;
-    height: 328px;
+    width: 100%;
     margin: 0;
 
     img {
         width: 100%;
+        height: 328px;
         border-radius: 20px;
     }
     
