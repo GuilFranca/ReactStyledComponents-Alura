@@ -12,7 +12,8 @@ const BannerEstilizado = styled.figure`
         border-radius: 20px;
     }
     
-    p {
+    h1 {
+        font-weight: 400;
         position: absolute;
         width: 301px;
         top: 92px;
@@ -28,7 +29,7 @@ const Banner = ({ text, backgroundBanner }) => {
     return (
         <BannerEstilizado>
             <img src={backgroundBanner} alt="banner" />
-            <p>{text}</p>
+            <h1>{text}</h1>
         </BannerEstilizado>
     );
 }
