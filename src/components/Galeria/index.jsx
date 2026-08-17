@@ -34,14 +34,10 @@ const Galeria = ({ fotos = [] }) => {
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
                     <ContainerFotos>
-                        {fotos.map(foto =>
-                            <Imagem
-                                id={foto.id}
-                                path={foto.path}
-                                titulo={foto.titulo}
-                                fonte={foto.fonte}
-                            />
-                        )}
+                        {fotos.map(foto => <Imagem
+                            key={foto.id}
+                            foto={foto} />)
+                        }
                     </ContainerFotos>
                 </SecaoFluida>
                 <Populares />

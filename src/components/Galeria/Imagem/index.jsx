@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import BotaoIcone from "../../BotaoIcone"
 
 const Figure = styled.figure`
-    width: ${(props) => (props.$expandida ? '90%' : '460px')};
+    width: ${props => props.$expandida ? '90%' : '460px'};
     max-width: 100%;
     margin: 0;
     display: flex;
@@ -22,28 +23,37 @@ const Figure = styled.figure`
         h4 {
             flex-grow: 1;
         }
-        h3,
-        h4 {
+        h3, h4 {
             margin: 0;
             font-size: 16px;
         }
     }
-`;
+`
 
-const Imagem = ({ id, path, titulo, fonte }) => {
+const Rodape = styled.footer`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const Imagem = ({ foto, expandida = false }) => {
     return (
-        <Figure id={id}>
-            <img src={path} alt={titulo} />
+        <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+            <img src={foto.path} alt={foto.alt} />
             <figcaption>
-                <h3>{titulo}</h3>
-                <footer>
-                    <p>{fonte}</p>
-                    <button><img src="./icones/favorito.png" alt="botão de favorito" /></button>
-                    <button><img src="./icones/expandir.png" alt="botão de expandir" /></button>
-                </footer>
+                <h3>{foto.titulo}</h3>
+                <Rodape>
+                    <h4>{foto.fonte}</h4>
+                    <BotaoIcone>
+                        <img src="/icones/favorito.png" alt="Icone de favorito" />
+                    </BotaoIcone>
+                    {!expandida && <BotaoIcone aria-hidden={expandida}>
+                        <img src="/icones/expandir.png" alt="Icone de expandir" />
+                    </BotaoIcone>}
+                </Rodape>
             </figcaption>
         </Figure>
-    );
+    )
 }
 
-export default Imagem;
+export default Imagem
