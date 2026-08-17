@@ -14,11 +14,16 @@ const SecaoFluida = styled.section`
 `;
 
 const ContainerFotos = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 24px; */
     /* flex-direction: row;
     flex-wrap: wrap; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+
 `;
 
 const Galeria = ({ fotos = [] }) => {
@@ -29,7 +34,7 @@ const Galeria = ({ fotos = [] }) => {
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
                     <ContainerFotos>
-                        {fotos.map(foto => 
+                        {fotos.map(foto =>
                             <Imagem
                                 id={foto.id}
                                 path={foto.path}
