@@ -1,8 +1,8 @@
-const ModalZoom = () => {
+const ModalZoom = ({ foto }) => {
     return (
         <>
-            <dialog open>
-                <p>Exemplo do Mozilla</p>
+            <dialog open={!!foto}>
+                <p>{foto?.titulo}</p>
                 <form method="dialog">
                     <button type="submit">ok</button>
                 </form>

@@ -26,7 +26,7 @@ const ContainerFotos = styled.div`
 
 `;
 
-const Galeria = ({ fotos = [] }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
     return (
         <>
             <Tags />
@@ -35,6 +35,7 @@ const Galeria = ({ fotos = [] }) => {
                     <Titulo>Navegue pela galeria</Titulo>
                     <ContainerFotos>
                         {fotos.map(foto => <Imagem
+                            aoZoomSolicitado={aoFotoSelecionada}
                             key={foto.id}
                             foto={foto} />)
                         }
